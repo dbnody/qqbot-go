@@ -1,4 +1,5 @@
 # QQ Bot Go
+由于 Go 相关插件功能开发时间较紧，测试覆盖有限，使用过程中可能会出现部分功能异常。
 
 这是一个基于 Go 的 OneBot V11 QQ 机器人。QQ 登录和消息协议由 NapCat 提供，本项目通过反向 WebSocket 接收事件并调用 OneBot API。
 
@@ -114,20 +115,3 @@ QQBOT_CP_HISTORY_PATH=C:/path/to/cp_history.json
 - Tarot 牌面使用 Go 生成的抽象 PNG，不是 Python 版本的原始插画
 - 部分外部服务的响应格式和限流策略可能发生变化
 - 目前不能据此宣称与 Python/NoneBot 运行时完全等价
-
-## 发布前检查
-
-`powershell
-go fmt ./...
-go test ./...
-go vet ./...
-go build -o qqbot.exe ./cmd/qqbot
-`
-
-GitHub Actions 会在 Windows Runner 上执行格式化、测试、静态检查和构建。
-
-请确认提交前没有加入 .env、数据库、日志、缓存、QQ 数据或 NapCat 安装目录。仓库当前未包含 GitHub 远端地址，也不会自动推送代码。
-
-## 许可证
-
-当前仓库未附带许可证。发布到 GitHub 前，请根据你的使用和分发需求补充合适的开源许可证。
